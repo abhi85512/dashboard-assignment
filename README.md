@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personalized Content Dashboard
 
-## Getting Started
+A dynamic, user-centric content dashboard built for the SDE Intern - Frontend Development Assignment. 
 
-First, run the development server:
+## Features
+
+- **Personalized Content Feed**: View a unified feed of news, social posts, and recommendations.
+- **User Preferences**: Select favorite categories from the sidebar. Settings are persisted via Redux Persist (Local Storage).
+- **Infinite Scrolling**: Scroll down to automatically load more content using Intersection Observer.
+- **Drag-and-Drop Organization**: Reorder items in your feed via Framer Motion's `Reorder` component.
+- **Debounced Search**: Type in the top search bar to search across content smoothly.
+- **Dark Mode**: Fully implemented Tailwind dark mode that can be toggled in the header.
+- **Animations**: Smooth transitions, loading spinners, and hover effects.
+
+## Technologies Used
+
+- **React / Next.js (App Router)**
+- **TypeScript**
+- **Redux Toolkit & Redux Persist** (State Management)
+- **Tailwind CSS** (Styling & Dark Mode)
+- **Framer Motion** (Animations & Drag-and-Drop)
+- **Lucide React** (Icons)
+
+## Setup Instructions
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open the app**:
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Testing
+
+*Note: In a full production scenario, you would run the following for the complete test suite. The structure is prepared for Cypress (E2E) and Jest (Unit).*
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# E2E Tests (Cypress)
+npm run cypress:open
+
+# Unit Tests (Jest)
+npm run test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `/src/components` - Reusable UI components (Sidebar, Header, ContentCard, Feed, etc.)
+- `/src/store` - Redux Toolkit configuration and slices
+- `/src/services` - Mock API service for fetching simulated data
+- `/src/app` - Next.js App Router pages and layouts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Bonus Features (Included)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Responsive Design**: Flawlessly adapts to mobile screens (Sidebar collapses on small screens).
+- **Mock Service Architecture**: Pre-configured mock API service for easy extension to real endpoints.
